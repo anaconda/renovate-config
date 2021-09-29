@@ -3,6 +3,9 @@
     "config:base",
     ":disableRateLimiting"
   ],
+  "pre-commit": {
+    "enabled": true
+  },
   "labels": [
     "renovate"
   ]
