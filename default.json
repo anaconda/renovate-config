@@ -9,5 +9,9 @@
   "labels": [
     "renovate"
   ],
-  "reviewersFromCodeOwners": "true"
+  "reviewersFromCodeOwners": "true",
+  "timezone": "UTC",
+  "schedule": [
+    "before 6am on Monday"
+  ]
 }
