@@ -10,8 +10,8 @@
     "renovate"
   ],
   "reviewersFromCodeOwners": "true",
-  "timezone": "America/Chicago",
+  "timezone": "UTC",
   "schedule": [
-    "before 2am on Monday"
+    "before 6am on Monday"
   ]
 }
