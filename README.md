@@ -28,6 +28,7 @@ To use the `default.json` configuration, put the following content in your local
 
 * Uses the recommended base config by renovate (`extends[config:base]`)
 * Disables rate limiting: number of Open PRs is unlimited, number of PRs opened per hour is unlimited: (`extends[:disableRateLimiting]`)
+* Pins GitHub actions by digest, but add the tag it’s pinned to as comment (`extends[helpers:pinGitHubActionDigests]`)
 * Enables the [pre-commit manager](https://docs.renovatebot.com/modules/manager/pre-commit/) that is in beta (`pre-commit` section)
 * Adds `renovate` as label to all Pull Requests (`labels` section)
 * Automatically sets Pull Request reviewers from the CODEOWNERS file if it exists (`reviewersFromCodeOwners`)
