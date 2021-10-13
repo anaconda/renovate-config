@@ -35,6 +35,11 @@ To use the `default.json` configuration, put the following content in your local
 * Sets the timezone to UTC (`timezone`)
 * Runs before 6am UTC each Monday (`schedule`). This timeframe makes renvoate run outside of business hours for both our US and European teams.
 
+### Anaconda extensions
+
+For specific usage that is not default in renovate, check the [`docs`](docs) folder for the type of file or dependency you want to update.
+There’s for example some configuration that allows you to update arbitrary dependencies in Dockerfiles and there might be more to come.
+
 ### Team/project presets
 
 You can add presets to this repository. Please name them accordingly, e.g. `infrastructure.json` for an infrastructure team specific config. To ensure global defaults are included, please extend the `default.json` in that preset. If you want to add another label, your config could look like this:

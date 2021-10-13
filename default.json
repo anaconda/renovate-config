@@ -14,5 +14,15 @@
   "timezone": "UTC",
   "schedule": [
     "before 6am on Monday"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\sENV .*?_VERSION=\"(?<currentValue>.*)\""
+      ]
+    }
   ]
 }
