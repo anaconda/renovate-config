@@ -41,6 +41,8 @@ To use the `default.json` configuration, put the following content in your local
 For specific usage that is not default in renovate, check the [`docs`](docs) folder for the type of file or dependency you want to update.
 There’s for example some configuration that allows you to update arbitrary dependencies in Dockerfiles and there might be more to come.
 
+When adding an extension, always use the `description` field to give a short summary of what the configuration does.
+
 ### Team/project presets
 
 You can add presets to this repository. Please name them accordingly, e.g. `infrastructure.json` for an infrastructure team specific config. To ensure global defaults are included, please extend the `default.json` in that preset. If you want to add another label, your config could look like this:
@@ -48,13 +50,14 @@ You can add presets to this repository. Please name them accordingly, e.g. `infr
 ```json
 {
   "extends": ["github>anaconda/renovate-config"],
+  "description": "Custom configuration for infrastructure team that will add other labels then the default",
   "labels": [
-    "additional-label"
+    "different-label"
   ]
 }
 ```
 
-This config will then get merged with the config in `default.json. Settings you define in the team specific config will override the default config.
+Please set the `description` field for every configuration block to help others understand what the configuration block does.
 
 To use this preset, you will then set the following in `renovate.json` in your repositories
 
@@ -63,6 +66,8 @@ To use this preset, you will then set the following in `renovate.json` in your r
   "extends": ["github>anaconda/renovate-config:infrastructure"]
 }
 ```
+
+This config will then get merged with the config in `default.json. Settings you define in the team specific config will be merged with the default config.
 
 ## Customizing local repo config
 

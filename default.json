@@ -18,6 +18,7 @@
   ],
   "regexManagers": [
     {
+      "description": "Upgrade arbitrary dependencies in a Dockerfile declared via ENV variables",
       "fileMatch": [
         "(^|/)Dockerfile$"
       ],
