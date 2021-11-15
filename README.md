@@ -32,6 +32,7 @@ To use the `default.json` configuration, put the following content in your local
 * Enables the [pre-commit manager](https://docs.renovatebot.com/modules/manager/pre-commit/) that is in beta (`pre-commit` section)
 * Adds `renovate` as label to all Pull Requests (`labels` section)
 * Automatically sets Pull Request reviewers from the CODEOWNERS file if it exists (`reviewersFromCodeOwners`)
+* Rebases PRs that are behind the target branch to ensure tests run against up-to-date config. (`extends[:rebaseStalePrs]`)
 * Sets the timezone to UTC (`timezone`)
 * Runs before 6am UTC each Monday (`schedule`). This timeframe makes renvoate run outside of business hours for both our US and European teams.
 
