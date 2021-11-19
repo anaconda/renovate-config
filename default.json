@@ -6,6 +6,12 @@
     ":rebaseStalePrs",
     "helpers:pinGitHubActionDigests"
   ],
+  "description": [
+    "Label all PRs with `renovate`",
+    "Automatically set reviewers from CODEOWNERS",
+    "Open new PRs automatically every Monday before 6am UTC. You can manually trigger PRs from the Dependency Dashboard",
+    "Upgrade arbitrary dependencies in Dockerfiles when you mark them, [see the documentation for details](https://github.com/anaconda/renovate-config/blob/main/docs/Dockerfile.md)"
+  ],
   "pre-commit": {
     "enabled": true
   },
