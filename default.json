@@ -1,6 +1,7 @@
 {
   "extends": [
     "config:base",
+    ":prConcurrentLimit10",
     ":rebaseStalePrs",
     "helpers:pinGitHubActionDigests"
   ],
@@ -10,8 +11,6 @@
   "labels": [
     "renovate"
   ],
-  "prConcurrentLimit": 10,
-  "prHourlyLimit": 0,
   "reviewersFromCodeOwners": "true",
   "timezone": "UTC",
   "schedule": [
