@@ -2,6 +2,7 @@
   "extends": [
     "config:base",
     ":prConcurrentLimit10",
+    ":prHourlyLimitNone",
     ":rebaseStalePrs",
     "helpers:pinGitHubActionDigests"
   ],
