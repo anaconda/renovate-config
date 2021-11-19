@@ -24,6 +24,8 @@ To use the `default.json` configuration, put the following content in your local
 }
 ```
 
+:warning: This configuration will change with the best practices Anaconda uses. If you want to review changes before applying them, [pin your extension](https://docs.renovatebot.com/config-presets/#github).
+
 [This default configuration](default.json) does the following:
 
 * Uses the recommended base config by renovate (`extends[config:base]`)
@@ -68,7 +70,7 @@ To use this preset, you will then set the following in `renovate.json` in your r
 }
 ```
 
-This config will then get merged with the config in `default.json. Settings you define in the team specific config will be merged with the default config.
+This config will then get merged with the config in `default.json`. Settings you define in the team specific config will be merged with the default config.
 
 ## Customizing local repo config
 
