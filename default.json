@@ -1,15 +1,19 @@
 {
   "extends": [
-    "config:base",
-    ":prConcurrentLimit10",
-    ":prHourlyLimitNone",
-    ":rebaseStalePrs",
-    "helpers:pinGitHubActionDigests"
+    "group:monorepos",
+    "group:recommended",
+    "helpers:pinGitHubActionDigests",
+    "workarounds:typesNodeVersioning"
   ],
+  "dependencyDashboard": true,
   "description": [
+    "Create a Dependency Dashboard as Issue, listing all upgrades",
+    "Open new PRs automatically every Monday before 6am UTC. You can manually trigger PRs from the Dependency Dashboard, those will be opened once renovate runs again (once every hour)",
     "Label all PRs with `renovate`",
+    "Rebase PRs when they fall behind the base branch",
+    "Use semantic commit messages for all upgrades",
+    "Open a maximum of 10 PRs concurrently",
     "Automatically set reviewers from CODEOWNERS",
-    "Open new PRs automatically every Monday before 6am UTC. You can manually trigger PRs from the Dependency Dashboard",
     "Upgrade arbitrary dependencies in Dockerfiles when you mark them, [see the documentation for details](https://github.com/anaconda/renovate-config/blob/main/docs/Dockerfile.md)"
   ],
   "pre-commit": {
@@ -18,11 +22,11 @@
   "labels": [
     "renovate"
   ],
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 0,
+  "rangeStrategy": "auto",
+  "rebaseWhen": "behind-base-branch",
   "reviewersFromCodeOwners": "true",
-  "timezone": "UTC",
-  "schedule": [
-    "before 6am on Monday"
-  ],
   "regexManagers": [
     {
       "description": "Upgrade arbitrary dependencies in a Dockerfile declared via ENV variables",
@@ -33,5 +37,10 @@
         "datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\sENV .*?_VERSION=\"(?<currentValue>.*)\""
       ]
     }
-  ]
+  ],
+  "schedule": [
+    "before 6am on Monday"
+  ],
+  "semanticCommits": "true",
+  "timezone": "UTC"
 }
