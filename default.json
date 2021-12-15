@@ -42,6 +42,6 @@
   "schedule": [
     "before 6am on Monday"
   ],
-  "semanticCommits": "true",
+  "semanticCommits": "enabled",
   "timezone": "UTC"
 }
