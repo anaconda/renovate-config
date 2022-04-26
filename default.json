@@ -35,6 +35,15 @@
       "matchStrings": [
         "datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\sENV .*?_VERSION=\"(?<currentValue>.*)\""
       ]
+    },
+    {
+      "description": "Upgrade go version in a GitHub workflow",
+      "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
+      "matchStrings": [
+        "go-version:\\s(?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "golang-version",
+      "depNameTemplate": "go"
     }
   ],
   "schedule": [
