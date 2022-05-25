@@ -44,6 +44,16 @@
       ],
       "datasourceTemplate": "golang-version",
       "depNameTemplate": "go"
+    },
+    {
+      "description": "Upgrade conde dependencies",
+      "fileMatch": [
+        "(^|/)environment.yml$"
+      ],
+      "matchStrings": [
+        "# renovate datasource=conda\\sdepName=(?<depName>.*?)\\s+- [a-z0-9]+==\"?(?<currentValue>.*)\"?"
+      ],
+      "datasourceTemplate": "conda"
     }
   ],
   "schedule": [
