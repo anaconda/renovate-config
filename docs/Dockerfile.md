@@ -2,7 +2,9 @@
 
 To upgrade dependencies in a `Dockerfile` that are not automatically recognized, there is a configuration using regex matching.
 
-You need to define your dependency version as an `ENV` var and then use it later on. An example:
+You need to define your dependency version as an `ENV` var and then use it later on. The env variable name *must* end in `_VERSION`.
+
+An example:
 
 ```Dockerfile
 # renovate: datasource=github-tags depName=conda/conda
