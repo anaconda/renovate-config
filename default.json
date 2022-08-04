@@ -46,7 +46,7 @@
       "depNameTemplate": "go"
     },
     {
-      "description": "Upgrade conde dependencies",
+      "description": "Upgrade conda dependencies",
       "fileMatch": [
         "(^|/)environment.yml$"
       ],
