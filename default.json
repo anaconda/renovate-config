@@ -26,7 +26,10 @@
   "prHourlyLimit": 0,
   "rangeStrategy": "auto",
   "reviewersFromCodeOwners": "true",
-  "gitIgnoredAuthors": ["anaconda-renovate-bot <anaconda-renovate-bot@anaconda.com>"],
+  "gitIgnoredAuthors": [
+    "anaconda-renovate-bot@anaconda.com",
+    "devops+anaconda-bot@anaconda.com"
+  ],
   "regexManagers": [
     {
       "description": "Upgrade arbitrary dependencies in a Dockerfile declared via ENV variables",
