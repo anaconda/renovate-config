@@ -3,7 +3,8 @@
     "group:monorepos",
     "group:recommended",
     "helpers:pinGitHubActionDigests",
-    "workarounds:typesNodeVersioning"
+    "workarounds:typesNodeVersioning",
+    "workarounds:supportRedHatImageVersion"
   ],
   "dependencyDashboard": true,
   "description": [
