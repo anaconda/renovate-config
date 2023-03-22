@@ -53,7 +53,7 @@
     {
       "description": "Upgrade conda dependencies",
       "fileMatch": [
-        "(^|/)environment.ya?ml$"
+        "(^|/)environment(.*).ya?ml$"
       ],
       "matchStrings": [
         "# renovate datasource=conda\\sdepName=(?<depName>.*?)\\s+- [a-z0-9]+==\"?(?<currentValue>.*)\"?"
