@@ -4,7 +4,11 @@ Renovate has a conda datasource already, so we can manually tag dependencies to 
 
 To do so, you need to add the line `# renovate datasource=conda depName=${channel}/${dependency}` *directly above* the line with your dependency.
 
-Example:
+You can also capture pypi dependencies by placing the line `# renovate datasource=pypi` *directly above* the line with your dependency
+
+Note: You must specify the exact current version of your conda dependency before Renovate will recognize available upgrades
+
+## Example:
 
 ```yml
 name: your-project
@@ -18,5 +22,9 @@ dependencies:
   # renovate datasource=conda depName=main/coverage
   - coverage
   # renovate datasource=conda depName=main/yapf
-  - yapf==0.31.0
+  - yapf=0.31.0
+  - pip
+  - pip:
+    # renovate datasource=pypi
+    - uvicorn==0.17.6
 ```
