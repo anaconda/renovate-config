@@ -56,7 +56,7 @@
         "(^|/)environment(.*).ya?ml$"
       ],
       "matchStrings": [
-        "# renovate datasource=conda\\sdepName=(?<depName>.*?)\\s+- [a-z0-9]+==\"?(?<currentValue>.*)\"?"
+        "#\\s*renovate\\s+datasource=conda\\s+depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?"
       ],
       "datasourceTemplate": "conda"
     }
