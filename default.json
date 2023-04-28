@@ -17,6 +17,12 @@
     "Automatically set reviewers from CODEOWNERS",
     "Upgrade arbitrary dependencies in Dockerfiles when you mark them, [see the documentation for details](https://github.com/anaconda/renovate-config/blob/main/docs/Dockerfile.md)"
   ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "commitMessageTopic": "{{datasource}} dependency {{depName}}"
+    }
+  ],
   "pre-commit": {
     "enabled": true
   },
