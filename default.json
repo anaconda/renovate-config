@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "group:monorepos",
     "group:recommended",
@@ -21,6 +22,12 @@
     {
       "matchManagers": ["regex"],
       "commitMessageTopic": "{{datasource}} dependency {{depName}}"
+    },
+    {
+      "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version",
+      "matchManagers": ["terraform"],
+      "matchDepTypes": ["required_provider"],
+      "rangeStrategy": "widen"
     }
   ],
   "pre-commit": {
