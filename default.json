@@ -5,7 +5,10 @@
     "group:recommended",
     "helpers:pinGitHubActionDigests",
     "workarounds:typesNodeVersioning",
-    "workarounds:supportRedHatImageVersion"
+    "workarounds:supportRedHatImageVersion",
+    "regexManagers:dockerfileVersions",
+    "regexManagers:githubActionsVersions",
+    "regexManagers:githubActionsVersions"
   ],
   "dependencyDashboard": true,
   "description": [
@@ -28,6 +31,12 @@
       "matchManagers": ["terraform"],
       "matchDepTypes": ["required_provider"],
       "rangeStrategy": "widen"
+    },
+    {
+      "description": "Remove 'v' from aws ruleset for tflint for the regex manager",
+      "matchManagers": ["regex"],
+      "matchPackageNames": ["terraform-linters/tflint-ruleset-aws"],
+      "extractVersion": "^v(?<version>)"
     }
   ],
   "pre-commit": {
@@ -39,21 +48,12 @@
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
   "rangeStrategy": "auto",
-  "reviewersFromCodeOwners": "true",
+  "reviewersFromCodeOwners": true,
   "gitIgnoredAuthors": [
     "anaconda-renovate-bot@anaconda.com",
     "devops+anaconda-bot@anaconda.com"
   ],
   "regexManagers": [
-    {
-      "description": "Upgrade arbitrary dependencies in a Dockerfile declared via ENV variables",
-      "fileMatch": [
-        "(^|/)Dockerfile$"
-      ],
-      "matchStrings": [
-        "datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\sENV .*?_VERSION=\"(?<currentValue>.*)\""
-      ]
-    },
     {
       "description": "Upgrade go version in a GitHub workflow",
       "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
@@ -76,6 +76,22 @@
       "fileMatch": ["(^|/)environment(.*).ya?ml$"],
       "matchStrings": ["# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"],
       "datasourceTemplate": "pypi"
+    },
+    {
+      "description": "Upgrade tflint plugins. Version must be specified with double quotes",
+      "fileMatch": [
+        ".tflint.hcl"
+      ],
+      "matchStrings": [
+        "# renovate datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s+version\\s+=\\s+\"(?<currentValue>.*)\""
+      ]
+    },
+    {
+      "description": "Upgrade arbitrary go module versions in Makefiles",
+      "fileMatch": ["^Makefile"],
+      "matchStrings": [
+        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
+      ]
     }
   ],
   "schedule": [
