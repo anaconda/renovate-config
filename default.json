@@ -7,7 +7,6 @@
     "workarounds:typesNodeVersioning",
     "workarounds:supportRedHatImageVersion",
     "regexManagers:dockerfileVersions",
-    "regexManagers:githubActionsVersions",
     "regexManagers:githubActionsVersions"
   ],
   "dependencyDashboard": true,
