@@ -66,14 +66,18 @@
       "description": "Upgrade conda dependencies",
       "fileMatch": ["(^|/)environment(.*).ya?ml$"],
       "matchStrings": [
-        "#\\s*renovate\\s+datasource=conda\\s+depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?"
+        "#\\s*renovate\\s+datasource=conda\\s+depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?",
+        "# renovate: datasource=conda depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?"
       ],
       "datasourceTemplate": "conda"
     },
     {
       "description": "Upgrade pypi dependencies inside conda environment files",
       "fileMatch": ["(^|/)environment(.*).ya?ml$"],
-      "matchStrings": ["# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"],
+      "matchStrings": [
+        "# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
+        "# renovate: datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"
+      ],
       "datasourceTemplate": "pypi"
     },
     {
@@ -82,14 +86,14 @@
         ".tflint.hcl"
       ],
       "matchStrings": [
-        "# renovate datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s+version\\s+=\\s+\"(?<currentValue>.*)\""
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+version\\s+=\\s+\"(?<currentValue>.*)\""
       ]
     },
     {
       "description": "Upgrade arbitrary go module versions in Makefiles",
       "fileMatch": ["^Makefile"],
       "matchStrings": [
-        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
     }
   ],
