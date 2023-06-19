@@ -36,6 +36,12 @@
       "matchManagers": ["regex"],
       "matchPackageNames": ["terraform-linters/tflint-ruleset-aws"],
       "extractVersion": "^v(?<version>)"
+    },
+    {
+      "description": "shellcheck-py does not use semantic versioning",
+      "matchManagers": ["pre-commit"],
+      "matchDepNames": ["shellcheck-py/shellcheck-py"],
+      "versioning": "loose"
     }
   ],
   "pre-commit": {
