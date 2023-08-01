@@ -49,7 +49,6 @@
   "rangeStrategy": "auto",
   "reviewersFromCodeOwners": true,
   "gitIgnoredAuthors": [
-    "anaconda-renovate-bot@anaconda.com",
     "devops+anaconda-bot@anaconda.com"
   ],
   "regexManagers": [
