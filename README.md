@@ -41,7 +41,6 @@ You can add presets to this repository. Please name them accordingly, e.g. `infr
 
 ```json
 {
-  "extends": ["github>anaconda/renovate-config"],
   "description": "Custom configuration for infrastructure team that will add other labels then the default",
   "labels": [
     "different-label"
@@ -55,11 +54,11 @@ To use this preset, you will then set the following in `renovate.json` in your r
 
 ```json
 {
-  "extends": ["github>anaconda/renovate-config:infrastructure"]
+  "extends": ["github>anaconda/renovate-config", "github>anaconda/renovate-config:infrastructure"]
 }
 ```
 
-This config will then get merged with the config in `default.json`. Settings you define in the team specific config will be merged with the default config.
+This config will then get merged with the config in `default.json`. Settings you define in the team specific config will be merged with the default config. In case of conflicting configuration, the config from the last `extends` entry is used.
 
 ## Customizing local repo config
 

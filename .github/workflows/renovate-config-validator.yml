@@ -10,7 +10,6 @@ on:
 
 jobs:
   validate:
-    name: Validate renovate config
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
