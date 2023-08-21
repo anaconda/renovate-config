@@ -30,12 +30,6 @@
       "matchManagers": ["terraform"],
       "matchDepTypes": ["required_provider"],
       "rangeStrategy": "widen"
-    },
-    {
-      "description": "Remove 'v' from aws ruleset for tflint for the regex manager",
-      "matchManagers": ["regex"],
-      "matchPackageNames": ["terraform-linters/tflint-ruleset-aws"],
-      "extractVersion": "^v(?<version>)"
     }
   ],
   "pre-commit": {
@@ -79,15 +73,6 @@
         "# renovate: datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"
       ],
       "datasourceTemplate": "pypi"
-    },
-    {
-      "description": "Upgrade tflint plugins. Version must be specified with double quotes",
-      "fileMatch": [
-        ".tflint.hcl"
-      ],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s+version\\s+=\\s+\"(?<currentValue>.*)\""
-      ]
     },
     {
       "description": "Upgrade arbitrary go module versions in Makefiles",
