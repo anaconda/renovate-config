@@ -83,7 +83,7 @@
     }
   ],
   "schedule": [
-    "before 6am on Monday"
+    "before 6am every weekday"
   ],
   "semanticCommits": "enabled",
   "timezone": "UTC"
