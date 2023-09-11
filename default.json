@@ -38,6 +38,10 @@
   "labels": [
     "renovate"
   ],
+  "postUpdateOptions": [
+    "gomodUpdateImportPaths",
+    "gomodTidy"
+  ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
   "rangeStrategy": "auto",
