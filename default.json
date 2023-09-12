@@ -13,7 +13,7 @@
   "description": [
     "Use the Anaconda Best Practice configuration from [anaconda/renovate-config](https://github.com/anaconda/renovate-config)",
     "Create a Dependency Dashboard as Issue, listing all upgrades",
-    "Open new PRs automatically every Monday before 6am UTC. You can manually trigger PRs from the Dependency Dashboard, those will be opened once renovate runs again (once every hour)",
+    "Open new PRs automatically every weekday before 6am UTC. You can manually trigger PRs from the Dependency Dashboard, those will be opened once renovate runs again (once every hour)",
     "Label all PRs with `renovate`",
     "Use semantic commit messages for all upgrades",
     "Open a maximum of 10 PRs concurrently",
