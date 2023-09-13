@@ -8,7 +8,7 @@ An example:
 
 ```Dockerfile
 # renovate: datasource=github-tags depName=conda/conda
-ENV MINICONDA_VERSION="23.7.3"
+ENV MINICONDA_VERSION="23.7.4"
 
 RUN curl -L -O https://repo.continuum.io/miniconda/Miniconda3-py38_${MINICONDA_VERSION}-Linux-x86_64.sh \
     && bash Miniconda3-${MINICONDA_PYTHON_VERSION}_${MINICONDA_VERSION}-Linux-x86_64.sh -b -p /opt/conda \
