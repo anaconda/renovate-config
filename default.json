@@ -74,7 +74,8 @@
       "fileMatch": ["(^|/)environment(.*).ya?ml$"],
       "matchStrings": [
         "# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
-        "# renovate: datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"
+        "# renovate: datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
+        "# renovate: datasource=pypi\\s+registryUrl=(?<registryUrl>.*?)\\s*-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)"
       ],
       "datasourceTemplate": "pypi"
     },
