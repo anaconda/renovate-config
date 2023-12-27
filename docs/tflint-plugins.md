@@ -2,7 +2,6 @@
 
 Annotate your `.tflint.hcl` file as follows:
 
-
 ```hcl
 plugin "aws" {
     enabled = true

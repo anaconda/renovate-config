@@ -2,7 +2,7 @@
 
 To upgrade dependencies in a `Dockerfile` that are not automatically recognized, there is a configuration using regex matching.
 
-You need to define your dependency version as an `ENV` var and then use it later on. The env variable name *must* end in `_VERSION`.
+You need to define your dependency version as an `ENV` var and then use it later on. The env variable name _must_ end in `_VERSION`.
 
 An example:
 
@@ -17,5 +17,5 @@ RUN curl -L -O https://repo.continuum.io/miniconda/Miniconda3-py38_${MINICONDA_V
 
 The `# renovate: datasource=github-tags depName=conda/conda` tells renovate which
 
-* [`datasource`](https://docs.renovatebot.com/modules/datasource/) to use, check the linked docs for all datasource you can use.
-* `depName` to use. This is the name of the dependency and specific for the datasource. For e.g. GitHub, it is `{organization}/{repository}`.
+- [`datasource`](https://docs.renovatebot.com/modules/datasource/) to use, check the linked docs for all datasource you can use.
+- `depName` to use. This is the name of the dependency and specific for the datasource. For e.g. GitHub, it is `{organization}/{repository}`.
