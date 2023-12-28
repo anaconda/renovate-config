@@ -10,9 +10,9 @@ Check [docs.renovatebot.com/config-presets](https://docs.renovatebot.com/config-
 
 Renovate will open a „Dependency Dashboard“ issue in each repository, tracking outstanding or rejected updates. This issue will have three sections:
 
-- **Awaiting Schedule**: renovate has detected an update, but has not yet run during the scheduled time to open Pull Requests (see the `schedule` configuration)
-- **Open**: There is an open Pull Request for those updates
-- **Ignored or Blocked**: Those updates are blocked because the existing Pull Request was closed.
+* **Awaiting Schedule**: renovate has detected an update, but has not yet run during the scheduled time to open Pull Requests (see the `schedule` configuration)
+* **Open**: There is an open Pull Request for those updates
+* **Ignored or Blocked**: Those updates are blocked because the existing Pull Request was closed.
 
 ### Simple
 
@@ -37,14 +37,14 @@ When adding an extension, always use the `description` field to give a short sum
 
 ### Team/project presets
 
-:warning: Note that this repository is public. If you need to add internal configuration, talk to the Platform team on Slack.
-
 You can add presets to this repository. Please name them accordingly, e.g. `infrastructure.json` for an infrastructure team specific config. To ensure global defaults are included, please extend the `default.json` in that preset. If you want to add another label, your config could look like this:
 
 ```json
 {
   "description": "Custom configuration for infrastructure team that will add other labels then the default",
-  "labels": ["different-label"]
+  "labels": [
+    "different-label"
+  ]
 }
 ```
 
@@ -54,10 +54,7 @@ To use this preset, you will then set the following in `renovate.json` in your r
 
 ```json
 {
-  "extends": [
-    "github>anaconda/renovate-config",
-    "github>anaconda/renovate-config:infrastructure"
-  ]
+  "extends": ["github>anaconda/renovate-config", "github>anaconda/renovate-config:infrastructure"]
 }
 ```
 
@@ -71,5 +68,5 @@ There are also [presets](https://docs.renovatebot.com/presets-default/) you can 
 
 Common settings you might want to change are:
 
-- [`schedule`](https://docs.renovatebot.com/configuration-options/#schedule): Specifies when renovate runs
-- [`labels`](https://docs.renovatebot.com/configuration-options/#labels): Add labels to the PR.
+* [`schedule`](https://docs.renovatebot.com/configuration-options/#schedule): Specifies when renovate runs
+* [`labels`](https://docs.renovatebot.com/configuration-options/#labels): Add labels to the PR.
