@@ -111,8 +111,8 @@ The `matchString` is pretty-printed below.
 
 ```
 # renovate:\s*datasource=(?<datasource>[\w\.]+?)\s
-ARG INSTALLER_URL=["']https:\/\/repo\.anaconda\.com\/\w+\/\w+-(?<currentValue>(py\d+_)?[\d\.]+\-\d+?)-(?<depName>[\w\-\.]+?)["']\s
-ARG SHA256SUM=["'](?<currentDigest>[a-f\d]+?)["']\s
+INSTALLER_URL=["']https:\/\/repo\.anaconda\.com\/\w+\/\w+-(?<currentValue>(py\d+_)?[\d\.]+\-\d+?)-(?<depName>[\w\-\.]+?)["']\s
+SHA256SUM=["'](?<currentDigest>[a-f\d]+?)["']\s
 ```
 
 ## Developers: understanding the transform templates
