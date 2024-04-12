@@ -49,7 +49,7 @@ Anaconda Distribution and Miniconda, however, will appear in seperate PRs.
 The example below shows a snippet of an example `Dockerfile`.
 It only sets the Miniconda version, which must include the Python version, and the installer suffix is given in the comment line.
 
-```docker
+```Dockerfile
 # renovate: datasource=custom.miniconda_installer depName=Linux-x86_64.sh
 ARG INSTALLER_VERSION=py312_24.1.0-0
 ```
