@@ -8,7 +8,7 @@ To use the data sources for the installers
 
 ```json
 {
-  "extends": ["github>anaconda/renovate-config:installers"]
+  "extends": ["github>anaconda/renovate-config:anaconda-installers"]
 }
 ```
 
