@@ -3,7 +3,7 @@
   "description": [
     "Preset to update installer versions for Anaconda Distribution and Miniconda",
     "The custom data sources process the .files.json files for each installer and return the latest installer version.",
-    "See the [documentation](https://github.com/anaconda/renovate-config/blob/main/docs/installers.md) for details."
+    "See the [documentation](https://github.com/anaconda/renovate-config/blob/main/docs/anaconda-installers.md) for details."
   ],
   "packageRules": [
     {
