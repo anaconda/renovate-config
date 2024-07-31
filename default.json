@@ -87,6 +87,11 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
+    },
+    {
+      "description": "Pin Serverless to less than 4.x because of license changes.",
+      "matchDepNames": ["serverless"],
+      "allowedVersions": "< 4.0"
     }
   ],
   "schedule": [
