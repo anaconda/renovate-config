@@ -21,18 +21,6 @@
     "Automatically set reviewers from CODEOWNERS",
     "Upgrade arbitrary dependencies in Dockerfiles when you mark them, [see the documentation for details](https://github.com/anaconda/renovate-config/blob/main/docs/Dockerfile.md)"
   ],
-  "packageRules": [
-    {
-      "matchManagers": ["regex"],
-      "commitMessageTopic": "{{datasource}} dependency {{depName}}"
-    },
-    {
-      "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version",
-      "matchManagers": ["terraform"],
-      "matchDepTypes": ["required_provider"],
-      "rangeStrategy": "widen"
-    }
-  ],
   "pre-commit": {
     "enabled": true
   },
@@ -87,6 +75,18 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "commitMessageTopic": "{{datasource}} dependency {{depName}}"
+    },
+    {
+      "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version",
+      "matchManagers": ["terraform"],
+      "matchDepTypes": ["required_provider"],
+      "rangeStrategy": "widen"
     },
     {
       "description": "Pin Serverless to less than 4.x because of license changes.",
