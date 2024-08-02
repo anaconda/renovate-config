@@ -94,9 +94,10 @@
       "allowedVersions": "< 4.0"
     },
     {
-      "description": "This disables the config from docker:pinDigests for the argocd manager. See https://github.com/renovatebot/renovate/pull/30556, can be removed once renovate-ce has released a version that contains this config",
+      "description": "This disables the config from docker:pinDigests for the argocd and helmv3 managers. See https://github.com/renovatebot/renovate/pull/30556, can be removed once renovate-ce has released a version that contains this config",
       "matchManagers": [
-        "argocd"
+        "argocd",
+        "helmv3"
       ],
       "pinDigests": false
     }
