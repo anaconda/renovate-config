@@ -4,7 +4,7 @@
     "docker:pinDigests",
     "group:monorepos",
     "group:recommended",
-    "helpers:pinGitHubActionDigests",
+    "helpers:pinGitHubActionDigestsToSemver",
     "workarounds:typesNodeVersioning",
     "workarounds:supportRedHatImageVersion",
     "regexManagers:dockerfileVersions",
