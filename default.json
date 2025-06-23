@@ -83,7 +83,7 @@
       "commitMessageTopic": "{{datasource}} dependency {{depName}}"
     },
     {
-      "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version, not requiring teams to update in lockstep with the Platform teams.",
+      "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version",
       "matchManagers": ["terraform"],
       "matchDepTypes": ["required_provider"],
       "rangeStrategy": "widen"
