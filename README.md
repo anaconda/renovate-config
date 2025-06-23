@@ -39,7 +39,7 @@ When adding an extension, always use the `description` field to give a short sum
 
 :warning: Note that this repository is public. If you need to add internal configuration, talk to the Platform team on Slack.
 
-You can add presets to this repository. Please name them accordingly, e.g. `teams/infrastructure.json` for an infrastructure team specific config. To ensure global defaults are included, please extend the `default.json` in that preset. If you want to add another label, your config could look like this:
+You can add presets to this repository. Please name them accordingly, e.g. `infrastructure.json` for an infrastructure team specific config. To ensure global defaults are included, please extend the `default.json` in that preset. If you want to add another label, your config could look like this:
 
 ```json
 {
@@ -54,7 +54,10 @@ To use this preset, you will then set the following in `renovate.json` in your r
 
 ```json
 {
-  "extends": ["github>anaconda/renovate-config//teams/infrastructure"]
+  "extends": [
+    "github>anaconda/renovate-config",
+    "github>anaconda/renovate-config:infrastructure"
+  ]
 }
 ```
 

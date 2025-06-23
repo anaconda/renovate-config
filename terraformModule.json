@@ -9,12 +9,6 @@
       "matchManagers": ["github-actions", "pre-commit", "gomod", "dockerfile", "regex", "tflint-plugin"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true
-    },
-    {
-      "description": "Pin ranges for terraform required_providers. We want this as we can pin directly in our repos, because we update everything in lockstep.",
-      "matchManagers": ["terraform"],
-      "matchDepTypes": ["required_provider"],
-      "rangeStrategy": "pin"
     }
   ]
 }
