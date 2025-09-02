@@ -33,6 +33,9 @@
   ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
+  "prBodyNotes": [
+    "<details><summary>renovate update details</summary><p>\n\n| Field       | Value             | \n|-------------|-------------------|\n| manager     | {{ manager }}     |\n| categories  | {{ categories }}  | \n| datasource  | {{ datasource }}  |\n| depName     | {{ depName }}     | \n| depType¹    | {{ depType }}     | \n| packageName | {{ packageName }} |\n| sourceUrl   | {{ sourceUrl }}   |\n| updateType  | {{ updateType }}  | \n| versioning  | {{ versioning }}  |\n\n¹ only available for some managers\n</p></details>"
+  ],
   "rangeStrategy": "auto",
   "reviewersFromCodeOwners": true,
   "gitIgnoredAuthors": [
