@@ -3,7 +3,18 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
+      - id: pretty-format-json
+        args: [--autofix, --no-sort-keys]
+      - id: check-json
+      - id: check-yaml
       - id: trailing-whitespace
+
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 41.93.1
+    hooks:
+      - id: renovate-config-validator
+        args: [--strict]
+        files: \.(json|json5)$
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v3.1.0
@@ -16,3 +27,8 @@ repos:
     hooks:
       - id: check-renovate
         name: validate renovate config
+
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes

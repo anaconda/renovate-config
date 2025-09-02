@@ -6,8 +6,19 @@
   "packageRules": [
     {
       "description": "Automatically merge minor updates for some managers",
-      "matchManagers": ["github-actions", "pre-commit", "gomod", "dockerfile", "regex", "tflint-plugin"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchManagers": [
+        "github-actions",
+        "pre-commit",
+        "gomod",
+        "dockerfile",
+        "custom.regex",
+        "tflint-plugin"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
       "automerge": true
     }
   ]

@@ -11,7 +11,9 @@
         "Anaconda Distribution installer.",
         "This group will bundle all installer architectures into one PR."
       ],
-      "matchDatasources": ["custom.anaconda_installer"],
+      "matchDatasources": [
+        "custom.anaconda_installer"
+      ],
       "groupName": "Anaconda Distribution",
       "commitMessageTopic": "Anaconda Distribution",
       "separateMajorMinor": false
@@ -21,7 +23,9 @@
         "Miniconda installer.",
         "This group will bundle all installer architectures into one PR."
       ],
-      "matchDatasources": ["custom.miniconda_installer"],
+      "matchDatasources": [
+        "custom.miniconda_installer"
+      ],
       "groupName": "Miniconda",
       "commitMessageTopic": "Miniconda",
       "separateMajorMinor": false

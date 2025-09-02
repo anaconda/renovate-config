@@ -5,7 +5,9 @@
   ],
   "packageRules": [
     {
-      "matchFileNames": ["docs/**.md"],
+      "matchFileNames": [
+        "docs/**.md"
+      ],
       "automerge": true
     }
   ]
