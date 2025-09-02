@@ -34,7 +34,7 @@
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
   "prBodyNotes": [
-    "<details><summary>renovate update details</summary><p>\n\n| Field       | Value             | \n|-------------|-------------------|\n| manager     | {{ manager }}     |\n| categories  | {{ categories }}  | \n| datasource  | {{ datasource }}  |\n| depName     | {{ depName }}     | \n| depType¹    | {{ depType }}     | \n| packageName | {{ packageName }} |\n| sourceUrl   | {{ sourceUrl }}   |\n| updateType  | {{ updateType }}  | \n| versioning  | {{ versioning }}  |\n\n¹ only available for some managers\n</p></details>"
+    "<details><summary>renovate update details</summary><p>\n\n| Field       | Value             | \n|-------------|-------------------|\n| manager     | {{ manager }}     |\n| categories  | {{ categories }}  | \n| datasource  | {{ datasource }}  |\n| depName     | {{ depName }}     | \n| depType\u00b9    | {{ depType }}     | \n| packageName | {{ packageName }} |\n| sourceUrl   | {{ sourceUrl }}   |\n| updateType  | {{ updateType }}  | \n| versioning  | {{ versioning }}  |\n\n\u00b9 only available for some managers\n</p></details>"
   ],
   "rangeStrategy": "auto",
   "reviewersFromCodeOwners": true,
@@ -47,7 +47,9 @@
     {
       "customType": "regex",
       "description": "Upgrade go version in a GitHub workflow",
-      "managerFilePatterns": ["/(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$/"],
+      "managerFilePatterns": [
+        "/(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$/"
+      ],
       "matchStrings": [
         "go-version:\\s(?<currentValue>.*)"
       ],
@@ -57,7 +59,9 @@
     {
       "customType": "regex",
       "description": "Upgrade conda dependencies",
-      "managerFilePatterns": ["/(^|/)environment(.*).ya?ml$/"],
+      "managerFilePatterns": [
+        "/(^|/)environment(.*).ya?ml$/"
+      ],
       "matchStrings": [
         "#\\s*renovate\\s+datasource=conda\\s+depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?",
         "# renovate: datasource=conda depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?"
@@ -67,7 +71,9 @@
     {
       "customType": "regex",
       "description": "Upgrade pypi dependencies inside conda environment files",
-      "managerFilePatterns": ["/(^|/)environment(.*).ya?ml$/"],
+      "managerFilePatterns": [
+        "/(^|/)environment(.*).ya?ml$/"
+      ],
       "matchStrings": [
         "# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
         "# renovate: datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
@@ -78,7 +84,9 @@
     {
       "customType": "regex",
       "description": "Upgrade arbitrary go module versions in Makefiles",
-      "managerFilePatterns": ["/^Makefile/"],
+      "managerFilePatterns": [
+        "/^Makefile/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
@@ -86,18 +94,26 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["custom.regex"],
+      "matchManagers": [
+        "custom.regex"
+      ],
       "commitMessageTopic": "{{datasource}} dependency {{depName}}"
     },
     {
       "description": "Widen ranges for terraform required_providers instead of replacing/bumping them. This preserves the minimum version",
-      "matchManagers": ["terraform"],
-      "matchDepTypes": ["required_provider"],
+      "matchManagers": [
+        "terraform"
+      ],
+      "matchDepTypes": [
+        "required_provider"
+      ],
       "rangeStrategy": "widen"
     },
     {
       "description": "Pin Serverless to less than 4.x because of license changes.",
-      "matchDepNames": ["serverless"],
+      "matchDepNames": [
+        "serverless"
+      ],
       "allowedVersions": "< 4.0"
     },
     {
