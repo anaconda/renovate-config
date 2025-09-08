@@ -3,6 +3,9 @@
   "description": [
     "Automerge CI and other helper depdenencies for terraform modules"
   ],
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
   "packageRules": [
     {
       "description": "Automatically merge minor updates for some managers",
