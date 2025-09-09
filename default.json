@@ -90,6 +90,16 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
+    },
+    {
+      "customType": "regex",
+      "description": "Enable pinning of default_language_version for pre-commit",
+      "managerFilePatterns": [
+        ".pre-commit-config.yaml"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s*[a-z]*: (?<currentValue>[^\\s]+)"
+      ]
     }
   ],
   "packageRules": [
