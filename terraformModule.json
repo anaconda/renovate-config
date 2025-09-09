@@ -23,6 +23,17 @@
         "digest"
       ],
       "automerge": true
+    },
+    {
+      "description": "Strip 'go' from go version, also pin to 1.24.6. Once https://github.com/golang/go/issues/74462 or https://github.com/gruntwork-io/terratest/issues/1589 is fixed, remove pin to 1.24.6",
+      "matchDatasources": [
+        "git-tags"
+      ],
+      "matchDepNames": [
+        "golang/go"
+      ],
+      "extractVersion": "^go(?<version>.*)$",
+      "allowedVersions": "1.24.6"
     }
   ]
 }
