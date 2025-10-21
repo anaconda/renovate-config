@@ -60,7 +60,7 @@
       "customType": "regex",
       "description": "Upgrade conda dependencies",
       "managerFilePatterns": [
-        "/(^|/)environment(.*).ya?ml$/"
+        "/(^|/)(environment|development|runtime)(.*)\\.ya?ml$/"
       ],
       "matchStrings": [
         "#\\s*renovate\\s+datasource=conda\\s+depName=(?<depName>.*?)\\s+-\\s*[\\w-]+\\s*==?\\s*\"?(?<currentValue>.*)\"?",
@@ -72,7 +72,7 @@
       "customType": "regex",
       "description": "Upgrade pypi dependencies inside conda environment files",
       "managerFilePatterns": [
-        "/(^|/)environment(.*).ya?ml$/"
+        "/(^|/)(environment|development|runtime)(.*)\\.ya?ml$/"
       ],
       "matchStrings": [
         "# renovate datasource=pypi\\s+-\\s*(?<depName>[\\w-]+)\\s*(\\[[\\w,\\s]+\\])?\\s*==?\\s*(?<currentValue>.*)",
