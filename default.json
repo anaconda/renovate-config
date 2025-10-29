@@ -133,6 +133,13 @@
         "helmv3"
       ],
       "pinDigests": false
+    },
+    {
+      "description": "https://github.com/scop/pre-commit-shfmt uses a custom versioning format that is not semver-compatible. Therefore we set it to loose explicitly.",
+      "matchPackageNames": [
+        "scop/pre-commit-shfmt"
+      ],
+      "versioning": "loose"
     }
   ],
   "schedule": [
