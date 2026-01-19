@@ -9,6 +9,18 @@
         "docs/**.md"
       ],
       "automerge": true
+    },
+    {
+      "description": "Automerge minor pre-commit-hooks",
+      "matchPackageNames": [
+        "renovatebot/pre-commit-hooks"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "automerge": true
     }
   ]
 }
