@@ -140,6 +140,16 @@
         "scop/pre-commit-shfmt"
       ],
       "versioning": "loose"
+    },
+    {
+      "description": "Disable Trivy updates due to supply chain incident",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "aquasecurity/trivy-action"
+      ],
+      "enabled": false
     }
   ],
   "schedule": [
