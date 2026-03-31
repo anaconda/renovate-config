@@ -150,6 +150,16 @@
         "aquasecurity/trivy-action"
       ],
       "enabled": false
+    },
+    {
+      "description": "Block compromised axios versions 0.30.4 & 1.14.1. See https://osv.dev/vulnerability/MAL-2026-2307",
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "axios"
+      ],
+      "allowedVersions": "!/^(0\\.30\\.4|1\\.14\\.1)$/"
     }
   ],
   "schedule": [
