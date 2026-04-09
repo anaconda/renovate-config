@@ -24,6 +24,8 @@
   "pre-commit": {
     "enabled": true
   },
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
   "labels": [
     "renovate"
   ],
