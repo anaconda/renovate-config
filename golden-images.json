@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": [
+    "Tracks Anaconda golden base image sha256 digests in Dockerfiles.",
+    "Add to your renovate.json extends list: \"github>anaconda/renovate-config:golden-images\"",
+    "Consumer repos scaffolded from anaconda/golden-templates include this preset automatically.",
+    "ECR authentication is handled by the Renovate bot IAM role at the org level. No hostRules needed."
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update sha256 digest pins for golden base images from ECR 811078382625",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile$/"
+      ],
+      "matchStrings": [
+        "FROM (?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]{64})"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    }
+  ]
+}
