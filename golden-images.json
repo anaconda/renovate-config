@@ -3,23 +3,19 @@
   "description": [
     "Tracks Anaconda golden base image sha256 digests in Dockerfiles.",
     "Add to your renovate.json extends list: \"github>anaconda/renovate-config:golden-images\"",
-    "Consumer repos scaffolded from anaconda/golden-templates include this preset automatically."
+    "Consumer repos scaffolded from anaconda/golden-templates include this preset automatically.",
+    "ECR authentication is handled by the Renovate bot IAM role at the org level. No hostRules needed."
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update sha256 digest pins for golden base images from ECR 811078382625.dkr.ecr.us-east-1.amazonaws.com/golden/",
-      "managerFilePatterns": [
-        "/(^|/)Dockerfile$/"
-      ],
+      "description": "Update sha256 digest pins for golden base images from ECR 811078382625",
+      "fileMatch": ["(^|/)Dockerfile$"],
       "matchStrings": [
         "FROM (?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]{64})"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "docker",
-      "autoReplaceStringTemplate": "FROM {{{depName}}}:{{{newValue}}}@{{{newDigest}}}",
-      "autoReplaceGlobalMatch": false
+      "versioningTemplate": "docker"
     }
-  ],
-  "_note_ecr_auth": "ECR authentication is handled by the Renovate bot's IAM role at the org level. No hostRules are needed in this preset. If the bot cannot authenticate to ECR 811078382625.dkr.ecr.us-east-1.amazonaws.com via IAM, add hostRules following the pattern in other ECR-aware presets in this repo."
+  ]
 }
