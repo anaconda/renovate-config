@@ -9,7 +9,9 @@
     {
       "customType": "regex",
       "description": "Update sha256 digest pins for golden base images from ECR 811078382625.dkr.ecr.us-east-1.amazonaws.com/golden/",
-      "managerFilePatterns": ["/(^|/)Dockerfile$/"],
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile$/"
+      ],
       "matchStrings": [
         "FROM (?<depName>[^:@\s]+):(?<currentValue>[^@\s]+)@(?<currentDigest>sha256:[a-f0-9]{64})"
       ],
