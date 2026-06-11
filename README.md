@@ -31,7 +31,7 @@ To use the `default.json` configuration, put the following content in your local
 ### Anaconda extensions
 
 For specific usage that is not default in renovate, check the [`docs`](docs) folder for the type of file or dependency you want to update.
-There’s for example some configuration that allows you to update arbitrary dependencies in Dockerfiles and there might be more to come.
+For example, there is some configuration that allows you to update arbitrary dependencies in Dockerfiles and there might be more to come.
 
 When adding an extension, always use the `description` field to give a short summary of what the configuration does.
 
