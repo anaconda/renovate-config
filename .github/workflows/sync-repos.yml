@@ -19,8 +19,8 @@ jobs:
       - name: Update downstream repositories
         shell: bash
         run: |
+          set -x
           for repo in $DOWNSTREAM_REPOS; do
             git remote add "$repo" "https://github.com/${repo}.git"
-            git fetch
-            git push "$repo" main
+            git push "$repo" main --force
           done
