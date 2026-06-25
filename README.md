@@ -1,5 +1,7 @@
 # renovate-config
 
+:warning: The source of truth for this repository is [anaconda/renovate-config](https://github.com/anaconda/renovate-config). If you see somewhere else, you're looking at a downstream copy.
+
 These are Anaconda's global default configurations for renovate.
 
 If you work for Anaconda and have any questions, please ask the infrastructure team. In all other cases, feel free to open an issue.
