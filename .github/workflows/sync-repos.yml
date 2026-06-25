@@ -20,6 +20,6 @@ jobs:
         shell: bash
         run: |
           for repo in $DOWNSTREAM_REPOS; do
-            git remote add "$repo" "git@github.com:${repo}.git"
+            git remote add "$repo" "https://github.com/${repo}.git"
             git push "$repo" main
           done
