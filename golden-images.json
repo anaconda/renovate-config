@@ -1,23 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": [
-    "Tracks Anaconda golden base image sha256 digests in Dockerfiles.",
+    "Anaconda golden base images: tag-only by contract.",
+    "Don't pin golden FROMs to a digest. Digest-pin-on-a-mutable-tag rots - the golden ECR lifecycle reaps rotated digests, so a pinned @sha256 eventually 404s and breaks the build (hit prod 4x, see anaconda/internal-images golden-digest-pin-incident 2026-06). Renovate still bumps the golden tag through the standard docker manager.",
     "Add to your renovate.json extends list: \"github>anaconda/renovate-config:golden-images\"",
     "Consumer repos scaffolded from anaconda/golden-templates include this preset automatically.",
     "ECR authentication is handled by the Renovate bot IAM role at the org level. No hostRules needed."
   ],
-  "customManagers": [
+  "packageRules": [
     {
-      "customType": "regex",
-      "description": "Update sha256 digest pins for golden base images from ECR 811078382625",
-      "managerFilePatterns": [
-        "/(^|/)Dockerfile$/"
+      "description": "Golden base images stay tag-only - never re-pin them to a digest.",
+      "matchDatasources": [
+        "docker"
       ],
-      "matchStrings": [
-        "FROM (?<depName>[^:@\\s]+):(?<currentValue>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]{64})"
+      "matchPackageNames": [
+        "/811078382625\\.dkr\\.ecr\\.[a-z0-9-]+\\.amazonaws\\.com\\/golden\\//"
       ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "pinDigests": false
     }
   ]
 }
