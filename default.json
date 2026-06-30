@@ -118,6 +118,16 @@
   ],
   "packageRules": [
     {
+      "description": "Golden base images are tag-only by contract. Digest-pin-on-a-mutable-tag rots: the golden ECR lifecycle reaps rotated digests, so a pinned digest 404s and breaks the build (hit prod 4x, see anaconda/internal-images golden-digest-pin-incident 2026-06). This overrides docker:pinDigests for the golden registry only - third-party images stay digest-pinned, and golden tag bumps still flow through the normal docker manager.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "/811078382625\\.dkr\\.ecr\\.[a-z0-9-]+\\.amazonaws\\.com\\/golden\\//"
+      ],
+      "pinDigests": false
+    },
+    {
       "matchManagers": [
         "custom.regex"
       ],
